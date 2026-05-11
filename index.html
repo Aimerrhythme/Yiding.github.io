@@ -6,8 +6,92 @@
     <title>Yiding Wang</title>
     <link rel="stylesheet" href="Portfolio.css">
     <script src="https://kit.fontawesome.com/557e0fafc1.js" crossorigin="anonymous"></script>
+    <style>
+        /* 直接内置修复：视差背景 + 去掉空白 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: transparent;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        /* 视差滚动背景 */
+        .parallax-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 120vh;
+            background-image: url('image/bg.jpg'); /* 你的背景图 */
+            background-size: cover;
+            background-position: center;
+            z-index: -2;
+        }
+        /* 修复顶部超大空白 */
+        #header {
+            min-height: auto;
+            height: auto;
+            padding: 80px 20px 100px 20px;
+            position: relative;
+            z-index: 1;
+        }
+        /* 内容半透明背景，保证文字清晰 */
+        #about, #services, #portfolio, #contact {
+            position: relative;
+            z-index: 1;
+            background: rgba(0,0,0,0.8);
+            padding: 70px 20px;
+        }
+        /* 布局基础 */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+        #name {
+            font-size: 32px;
+        }
+        #sidemenu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        #sidemenu a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        .Header-Text p {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .Header-Text h1 {
+            font-size: 46px;
+            margin-bottom: 20px;
+        }
+        .Header-Text a {
+            color: white;
+            font-size: 24px;
+            margin-right: 15px;
+        }
+        .fa-bars, .fa-circle-xmark {
+            display: none;
+        }
+    </style>
 </head>
+
 <body>
+    <!-- 视差背景 -->
+    <div class="parallax-bg"></div>
+
     <div id="header">
         <div class="container">
             <nav>
@@ -48,7 +132,7 @@
                     <div class="tab-content active-tab" id="skills">
                         <ul draggable="true">
                             <li>Python</li>
-                            <li class="li2">C</li>
+                            <li class="li2">CSS</li>
                             <li class="li2">MATLAB / Simulink</li>
                             <li class="li2">Vivado / PSSE</li>
                             <li class="li2">R Studio / MS Office</li>
@@ -124,6 +208,26 @@
         </div>
     </div>
 
-    <script src="Portfolio.js"></script>
+    <script>
+        // 视差滚动效果
+        window.addEventListener('scroll', function() {
+            const bg = document.querySelector('.parallax-bg');
+            bg.style.transform = `translateY(${window.scrollY * 0.4}px)`;
+        });
+
+        // 保留原有菜单功能
+        function openmenu() {}
+        function closemenu() {}
+        function opentab(tabname) {
+            var tablinks = document.getElementsByClassName("tab-link");
+            var tabcontents = document.getElementsByClassName("tab-content");
+            for (var i = 0; i < tabcontents.length; i++) {
+                tabcontents[i].classList.remove("active-tab");
+                tablinks[i].classList.remove("after-Link");
+            }
+            document.getElementById(tabname).classList.add("active-tab");
+            event.currentTarget.classList.add("after-Link");
+        }
+    </script>
 </body>
 </html>
