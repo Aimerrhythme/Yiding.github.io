@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kazi Zawad Uddin</title>
+    <link rel="stylesheet" href="Portfolio.css">
+    <script src="https://kit.fontawesome.com/557e0fafc1.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <h1 id="name" draggable="true"><span>''Za</span>wad</h1>
+                <ul id="sidemenu">
+                    <li class="list"><a href="#header">Home</a></li>
+                    <li class="list"><a href="#about">About</a></li>
+                    <li class="list"><a href="#services">Services</a></li>
+                    <li class="list"><a href="#portfolio">Portfolio</a></li>
+                    <li class="list"><a href="#contact">Contact</a></li>
+                    <i class="fa-sharp-duotone fa-solid fa-circle-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="Header-Text" draggable="true">
+                <p>Software Engineer</p>
+                <h1>Kazi Zawad Ud<span>din</span></h1>
+                <a href="https://github.com/GitZawad" target="_blank"><i class="fa-brands fa-github"></i></a>
+                <a href="https://discord.com/users/757992202906632423" target="_blank"><i class="fa-brands fa-discord"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="image/Zawad.jpg" alt="Profile">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p><q draggable="true">As a dedicated student enrolled in the Bachelor of Software Engineering program at Zhengzhou University, I am honored to be a recipient of the esteemed Henan Provincial Government Scholarship. My academic pursuits are driven by an unwavering passion for programming languages and adept problem-solving abilities. With an earnest commitment to excellence, I aspire to complete my degree and strategically position myself within the industry to realize my career ambitions. I am eager to seek mentorship from seasoned professionals who can provide guidance and insights conducive to my professional growth and development.</q></p>
+                    <div class="tab-title">
+                        <p class="tab-link after-Link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-link" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-link" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-content active-tab" id="skills">
+                        <ul draggable="true">
+                            <li>HTML</li>
+                            <li class="li2">CSS</li>
+                            <li class="li2">Java</li>
+                            <li class="li2">C</li>
+                        </ul>
+                    </div>
+                    <div class="tab-content" id="experience">
+                        <ul draggable="true">
+                            <li>Software Engineering Fellow<span>at HeadStarter AI</span></li>
+                            <li class="li2">Human Resources Intern<span>at Gaotek Inc</span></li>
+                        </ul>
+                    </div>
+                    <div class="tab-content" id="education">
+                        <ul draggable="true">
+                            <li><span>Bachelor of Science(Graduate: 2027)</span><br>Computer Software Engineering<br><a href="http://english.zzu.edu.cn/" target="_blank">Zhengzhou University</a><br>Zhengzhou, Henan, China</li>
+                            <li class="li2"><span>Higher Secondary Certificate(Graduate: 2022)</span><br>Group: Science<br><a href="https://ccpc.edu.bd/" target="_blank">Chittagong Cantonment Public College</a><br>Chittagong, Bangladesh</li>
+                            <li class="li2"><span>Secondary School Certificate(Graduate: 2020)</span><br>Group: Science<br><a href="https://www.gmhsctg.tsmts.com/" target="_blank">Govt. Muslim High School</a><br>Chittagong, Bangladesh</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="services">
+        <div class="container">
+            <h1 class="sub-title" style="background-color: rgba(245, 222, 179, 0.253);">My Services</h1>
+            <div class="services-list">
+                <div>
+                    <i class="fa-solid fa-code"></i>
+                    <h2 style="padding-top: 10px;">Web Design</h2>
+                    <p style="padding-top: 5px; margin-top: 20px;">Portfolio Website, Company Website, E-Learning Website etc.</p>
+                    <a href="#" style="padding-top: 5px; margin-top: 20px;">Learn More</a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-mobile-button"></i>
+                    <h2 style="padding-top: 10px;">App Design</h2>
+                    <p style="padding-top: 5px; margin-top: 20px;">Mobile Gaming App, Weather App, Health App etc.</p>
+                    <a href="#" style="padding-top: 5px; margin-top: 20px;">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="portfolio">
+        <div class="container">
+            <h1 class="sub-title">Portfolio</h1>
+            <div class="portfolio-list">
+                <div class="portfolio-item">
+                    <h2>Achievement</h2>
+                    <p>In 2023, I was honored to receive the esteemed Henan Provincial Government Scholarship from People's Republic of China, enabling me to pursue a Bachelor of Science degree in Software Engineering. This prestigious scholarship covers the entirety of my tuition fees throughout the duration of my four-year academic journey at Zhengzhou University.</p>
+                    <a href="image/Kazi Zawad uddin(CV).jpg" target="_blank">My Resume</a>
+                    <a href="image/Kazi Zawad uddin(CV).jpg" download>Download Resume</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="contact">
+        <div class="container">
+            <h1 class="sub-title">Contact Me</h1>
+            <div class="contact-info">
+                <p><i class="fa-solid fa-envelope"></i> Email: zawaduddin@gmail.com</p>
+                <p><i class="fa-solid fa-phone"></i> Phone: 16696171043</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="Portfolio.js"></script>
+</body>
+</html>
