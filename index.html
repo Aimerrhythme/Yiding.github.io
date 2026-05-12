@@ -3,93 +3,264 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yiding Wang</title>
+    <title>Yiding Wang | Power & IoT Engineer</title>
     <link rel="stylesheet" href="Portfolio.css">
     <script src="https://kit.fontawesome.com/557e0fafc1.js" crossorigin="anonymous"></script>
     <style>
-        /* 直接内置修复：视差背景 + 去掉空白 */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            scroll-behavior: smooth;
         }
+
+        :root {
+            --primary: #4cc9f0;
+            --dark: #0a0a0a;
+            --light: #ffffff;
+            --card: rgba(0,0,0,0.88);
+        }
+
         body {
             background: transparent;
             color: white;
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
         }
-        /* 视差滚动背景 */
+
         .parallax-bg {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 120vh;
-            background-image: url('image/bg.png'); /* 你的背景图 */
+            background-image: url('image/bg.png');
             background-size: cover;
             background-position: center;
             z-index: -2;
         }
-        /* 修复顶部超大空白 */
+
         #header {
             min-height: auto;
             height: auto;
-            padding: 80px 20px 100px 20px;
+            padding: 80px 20px 120px 20px;
             position: relative;
             z-index: 1;
         }
-        /* 内容半透明背景，保证文字清晰 */
+
         #about, #services, #portfolio, #contact {
             position: relative;
             z-index: 1;
-            background: rgba(0,0,0,0.8);
-            padding: 70px 20px;
+            background: var(--card);
+            padding: 80px 20px;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
         }
-        /* 布局基础 */
+
         .container {
             max-width: 1100px;
             margin: 0 auto;
         }
+
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 60px;
+            margin-bottom: 70px;
+            flex-wrap: wrap;
         }
+
         #name {
-            font-size: 32px;
+            font-size: 34px;
+            font-weight: bold;
+            color: var(--primary);
         }
+
         #sidemenu {
             display: flex;
             list-style: none;
-            gap: 30px;
+            gap: 28px;
+            flex-wrap: wrap;
         }
+
         #sidemenu a {
             color: white;
             text-decoration: none;
             font-size: 16px;
+            transition: 0.3s;
         }
+
+        #sidemenu a:hover {
+            color: var(--primary);
+        }
+
         .Header-Text p {
-            font-size: 18px;
-            margin-bottom: 10px;
+            font-size: 19px;
+            color: #ddd;
+            margin-bottom: 8px;
         }
+
         .Header-Text h1 {
-            font-size: 46px;
+            font-size: 50px;
             margin-bottom: 20px;
         }
+
+        .Header-Text h1 span {
+            color: var(--primary);
+        }
+
         .Header-Text a {
             color: white;
-            font-size: 24px;
-            margin-right: 15px;
+            font-size: 26px;
+            margin-right: 16px;
+            transition: 0.3s;
         }
+
+        .Header-Text a:hover {
+            color: var(--primary);
+        }
+
+        .btn-cv {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 28px;
+            background: var(--primary);
+            color: #000 !important;
+            font-weight: bold;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 15px !important;
+        }
+
+        .btn-cv:hover {
+            background: #3aa8d8;
+        }
+
         .fa-bars, .fa-circle-xmark {
             display: none;
+        }
+
+        .sub-title {
+            font-size: 32px;
+            margin-bottom: 40px;
+            color: var(--primary);
+        }
+
+        .row {
+            display: flex;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .about-col-1, .about-col-2 {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-col-1 img {
+            width: 100%;
+            border-radius: 10px;
+            max-width: 300px;
+        }
+
+        .tab-title {
+            display: flex;
+            gap: 25px;
+            margin: 30px 0;
+            font-weight: bold;
+        }
+
+        .tab-link {
+            cursor: pointer;
+            padding-bottom: 6px;
+            border-bottom: 2px solid transparent;
+        }
+
+        .tab-link.after-Link {
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .tab-content ul {
+            list-style: none;
+        }
+
+        .tab-content li {
+            margin: 12px 0;
+            font-size: 16px;
+        }
+
+        .tab-content li span {
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        .skill-item {
+            margin: 14px 0;
+        }
+
+        .skill-name {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 6px;
+        }
+
+        .skill-bar {
+            height: 6px;
+            background: #333;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .skill-fill {
+            height: 100%;
+            background: var(--primary);
+        }
+
+        .services-list, .portfolio-list {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .services-list > div, .portfolio-item {
+            flex: 1;
+            min-width: 280px;
+            background: rgba(20,20,20,0.7);
+            padding: 30px;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .services-list > div:hover, .portfolio-item:hover {
+            transform: translateY(-5px);
+            background: rgba(30,30,30,0.8);
+        }
+
+        .services-list i {
+            font-size: 36px;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .services-list h2, .portfolio-item h2 {
+            margin-bottom: 10px;
+        }
+
+        .contact-info p {
+            font-size: 17px;
+            margin: 12px 0;
+        }
+
+        .contact-info i {
+            color: var(--primary);
+            margin-right: 10px;
+            width: 20px;
         }
     </style>
 </head>
 
 <body>
-    <!-- 视差背景 -->
     <div class="parallax-bg"></div>
 
     <div id="header">
@@ -102,52 +273,73 @@
                     <li class="list"><a href="#services">Services</a></li>
                     <li class="list"><a href="#portfolio">Portfolio</a></li>
                     <li class="list"><a href="#contact">Contact</a></li>
-                    <i class="fa-sharp-duotone fa-solid fa-circle-xmark" onclick="closemenu()"></i>
                 </ul>
-                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
             </nav>
             <div class="Header-Text" draggable="true">
                 <p>Electrical Engineering | Power & IoT</p>
                 <h1>Yiding <span>Wang</span></h1>
                 <a href="https://github.com/Aimerrhythme" target="_blank"><i class="fa-brands fa-github"></i></a>
                 <a href="https://www.linkedin.com/in/yiding-wang-/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <br>
+                <a href="resume.pdf" download class="btn-cv">Download CV</a>
             </div>
         </div>
     </div>
 
     <div id="about">
         <div class="container">
+            <h1 class="sub-title">About Me</h1>
             <div class="row">
                 <div class="about-col-1">
                     <img src="image/avatar.png" alt="Profile">
                 </div>
                 <div class="about-col-2">
-                    <h1 class="sub-title">About Me</h1>
-                    <p><q draggable="true">I am a Master of Engineering graduate in Power from the University of Sydney, with a solid background in Electrical Engineering, IoT, power system analysis, renewable energy, and optimization modeling. I have hands-on experience in engineering tutoring, industrial lean improvement, and full-stack project development. Proficient in Python, MATLAB, Vivado, and data-driven algorithms, I am passionate about power systems, renewable integration, EV infrastructure, and smart city solutions.</q></p>
+                    <p>I am a Master of Engineering graduate in Power from the University of Sydney, specializing in Electrical Engineering, IoT, power system analysis, renewable energy, and optimization modeling. With hands-on experience in engineering education and industrial lean improvement, I focus on data-driven solutions for smart grids, microgrids, EV infrastructure, and sustainable energy systems.</p>
+
                     <div class="tab-title">
                         <p class="tab-link after-Link" onclick="opentab('skills')">Skills</p>
                         <p class="tab-link" onclick="opentab('experience')">Experience</p>
                         <p class="tab-link" onclick="opentab('education')">Education</p>
                     </div>
+
                     <div class="tab-content active-tab" id="skills">
-                        <ul draggable="true">
-                            <li>Python</li>
-                            <li class="li2">CSS</li>
-                            <li class="li2">MATLAB / Simulink</li>
-                            <li class="li2">Vivado / PSSE</li>
-                            <li class="li2">R Studio / MS Office</li>
-                        </ul>
+                        <div class="skill-item">
+                            <div class="skill-name"><span>Python</span><span>90%</span></div>
+                            <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name"><span>MATLAB / Simulink</span><span>85%</span></div>
+                            <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name"><span>Vivado / PSSE</span><span>80%</span></div>
+                            <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name"><span>C Programming</span><span>75%</span></div>
+                            <div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name"><span>Data & Optimization</span><span>88%</span></div>
+                            <div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div>
+                        </div>
                     </div>
+
                     <div class="tab-content" id="experience">
-                        <ul draggable="true">
-                            <li>Undergraduate Engineering Tutor<span>at Tutor Lim</span></li>
-                            <li class="li2">Assistant Engineer, Lean Improvement<span>at China Star Optoelectronic Technology (CSOT)</span></li>
+                        <ul>
+                            <li>Undergraduate Engineering Tutor <span>at Tutor Lim</span><br>
+                            • Tutored 10+ students in EE courses, improving exam scores by 20%<br>
+                            • Developed lab materials for MATLAB/Simulink projects</li>
+                            <li>Assistant Engineer, Lean Improvement <span>at CSOT</span><br>
+                            • Optimized production workflows, reducing downtime by 15%<br>
+                            • Standardized 5 key operational SOPs</li>
                         </ul>
                     </div>
+
                     <div class="tab-content" id="education">
-                        <ul draggable="true">
-                            <li><span>Master of Engineering (Power)</span><br>University of Sydney<br>2023 – 2024 | GPA: 75/100 (Distinction)</li>
-                            <li class="li2"><span>Bachelor of Electrical Engineering (IoT)</span><br>University of Sydney<br>2018 – 2022 | Second Class Honours</li>
+                        <ul>
+                            <li><span>Master of Engineering (Power)</span><br>University of Sydney | 2023 – 2024<br>GPA: 75/100 (Distinction)</li>
+                            <li><span>Bachelor of Electrical Engineering (IoT)</span><br>University of Sydney | 2018 – 2022<br>Second Class Honours</li>
                         </ul>
                     </div>
                 </div>
@@ -157,25 +349,22 @@
 
     <div id="services">
         <div class="container">
-            <h1 class="sub-title" style="background-color: rgba(245, 222, 179, 0.253);">My Services</h1>
+            <h1 class="sub-title">My Services</h1>
             <div class="services-list">
                 <div>
                     <i class="fa-solid fa-code"></i>
-                    <h2 style="padding-top: 10px;">Engineering Modeling</h2>
-                    <p style="padding-top: 5px; margin-top: 20px;">Power system simulation, microgrid optimization, algorithm development.</p>
-                    <a href="#" style="padding-top: 5px; margin-top: 20px;">Learn More</a>
+                    <h2>Engineering Modeling</h2>
+                    <p>Power system simulation, microgrid optimization, algorithm development.</p>
                 </div>
                 <div>
                     <i class="fa-solid fa-microchip"></i>
-                    <h2 style="padding-top: 10px;">IoT & FPGA Design</h2>
-                    <p style="padding-top: 5px; margin-top: 20px;">SoC design, IoT monitoring systems, FPGA programming with Vivado.</p>
-                    <a href="#" style="padding-top: 5px; margin-top: 20px;">Learn More</a>
+                    <h2>IoT & FPGA Design</h2>
+                    <p>SoC design, IoT monitoring systems, FPGA programming with Vivado.</p>
                 </div>
                 <div>
                     <i class="fa-solid fa-chart-line"></i>
-                    <h2 style="padding-top: 10px;">Data & Optimization</h2>
-                    <p style="padding-top: 5px; margin-top: 20px;">PSO, MIQP, BFGS, investment modeling, EV charging location.</p>
-                    <a href="#" style="padding-top: 5px; margin-top: 20px;">Learn More</a>
+                    <h2>Data & Optimization</h2>
+                    <p>PSO, MIQP, BFGS, investment modeling, EV charging location.</p>
                 </div>
             </div>
         </div>
@@ -187,12 +376,16 @@
             <div class="portfolio-list">
                 <div class="portfolio-item">
                     <h2>Key Projects</h2>
-                    <p>• Renewable Energy Microgrid Investment Optimization Model<br>• Electric Vehicle Charging Station Location Optimization<br>• Smart City Hybrid Energy System Design</p>
+                    <p>• Renewable Energy Microgrid Investment Optimization Model</p>
+                    <p>• Electric Vehicle Charging Station Location Optimization</p>
+                    <p>• Smart City Hybrid Energy System Design</p>
                     <br>
                     <h2>Achievements</h2>
-                    <p>• First Prize, Smart City Design Competition, University of Sydney (2023)<br>• High-Score IoT Infrastructure Monitoring System Design (2022)</p>
-                    <a href="resume.pdf" target="_blank">My Resume</a>
-                    <a href="resume.pdf" download>Download Resume</a>
+                    <p>• First Prize, Smart City Design Competition, USYD (2023)</p>
+                    <p>• High-Distinction IoT Infrastructure Monitoring System</p>
+                    <br>
+                    <a href="resume.pdf" target="_blank" style="color:var(--primary);">View Resume</a> &nbsp;|&nbsp;
+                    <a href="resume.pdf" download style="color:var(--primary);">Download CV</a>
                 </div>
             </div>
         </div>
@@ -202,23 +395,19 @@
         <div class="container">
             <h1 class="sub-title">Contact Me</h1>
             <div class="contact-info">
-                <p><i class="fa-solid fa-envelope"></i> Email: 765893006@qq.com</p>
-                <p><i class="fa-solid fa-envelope"></i> Uni Email: ywan8535@uni.sydney.edu.au</p>
-                <p><i class="fa-solid fa-envelope"></i> Work Email: wangyiding@hbc.edu.cn</p>
+                <p><i class="fa-solid fa-envelope"></i> Personal: 765893006@qq.com</p>
+                <p><i class="fa-solid fa-envelope"></i> University: ywan8535@uni.sydney.edu.au</p>
+                <p><i class="fa-solid fa-envelope"></i> Work: wangyiding@hbc.edu.cn</p>
             </div>
         </div>
     </div>
 
     <script>
-        // 视差滚动效果
         window.addEventListener('scroll', function() {
             const bg = document.querySelector('.parallax-bg');
             bg.style.transform = `translateY(${window.scrollY * 0.4}px)`;
         });
 
-        // 保留原有菜单功能
-        function openmenu() {}
-        function closemenu() {}
         function opentab(tabname) {
             var tablinks = document.getElementsByClassName("tab-link");
             var tabcontents = document.getElementsByClassName("tab-content");
