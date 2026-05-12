@@ -9,9 +9,17 @@ html {
     scroll-behavior: smooth;
 }
 
+/* 科技渐变 + 不占内存 + 滚动丝滑 */
 body {
-    background: #080808;
+    background: linear-gradient(135deg, #0d0d1a, #121230, #0f172a, #1e1e4f);
+    background-attachment: fixed;
+    background-size: 150% 150%;
     color: #fff;
+}
+/* 内容半透明磨砂 */
+#about, #services, #portfolio, #contact {
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(6px);
 }
 
 #header {
